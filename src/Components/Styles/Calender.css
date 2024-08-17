@@ -1,0 +1,443 @@
+
+.calender-app{
+    width: 60%;
+    min-width: 90vmin;
+    aspect-ratio: 3/2;
+    background-color: rgb(51, 50, 50);
+    padding: 3rem;
+    border-radius: 3rem;
+    border: 1rem solid rgb(51, 50, 50);
+    display: flex;
+    column-gap: 5rem;
+    transition: width 0.5s;
+    box-shadow: 4px 6px 10px rgb(31, 30, 30);
+}
+
+.calender-app:hover{
+    width: 61%;
+
+}
+
+.heading{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(4rem, 3.8cqi, 7rem);
+    letter-spacing: 0.3rem;
+    padding-left: 1.3rem;
+}
+
+
+.navigate-date{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin: 3.5rem 0;
+
+}
+
+.navigate-date h2{
+    font-size: clamp(1.5rem, 1.5cqi, 2.5rem);
+    color: #bbb;
+    padding-left: 1.3rem;
+}
+
+.buttons{
+    display: flex;
+    column-gap: 1rem;
+    margin-left: auto;
+}
+
+.buttons i{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(70, 69, 69);
+    transition: background-color 1s;
+}
+
+.buttons i:hover{
+    background-color: rgb(100, 99, 99);
+}
+
+.weekdays{
+    width: 100%;
+    display: flex;
+    margin: 4rem 0;
+}
+
+.weekdays span{
+    width: calc(100%/7);
+    font-size: clamp(1rem, 0.8cqi, 1.3rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #bbb;
+    letter-spacing: 0.1rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+.days{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.days span{
+    font-size: clamp(1.2rem, 1cqi, 1.6rem);
+    width: calc(100%/7);
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+.days span:hover{
+    background-color: rgb(70, 69, 69);
+}
+
+.current-date{
+    background-color: #1874E3;
+    box-shadow: 4px 4px 4px #4e555e;
+    padding: 1rem;
+}
+
+.current-date:hover{
+    background-color: #4d89d3 !important;
+}
+
+
+.events{
+    width: 60%;
+    height: 100%;
+    padding: 3rem 0;
+
+}
+
+.event{
+    width: 100%;
+    height: 7rem;
+    background-color: rgb(70, 69, 69);
+    padding: 1.5rem 0;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.event-date-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    border-right: 0.5rem solid #333232;
+    opacity: 0.5;
+}
+
+.event-date{
+    font-size: clamp(1rem, 1cqi, 1.2rem);
+    
+}
+
+.event-time{
+    font-size: clamp(1.3rem, 1cqi, 1.6rem);
+    line-height: 4rem;
+    font-weight: bold;
+    color: white;
+}
+
+.event-title{
+    font-size: clamp(1.2rem, 1cqi, 1.4rem);
+    line-height: 2rem;
+    color: white;
+    width: 75%;
+    padding: 0 3rem 0 1rem;
+    overflow-wrap: break-word;
+}
+
+.event-buttons{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.event-buttons i{
+    font-size: 1.6rem;
+    color: white;
+    cursor: pointer; 
+}
+
+
+.event-popup{
+    position: absolute;
+    top: 45%;
+    left: 30rem;
+    background-color: rgb(31, 30, 30);
+    width: clamp(25rem, 26cqi, 50rem);
+    height: 28rem;
+    aspect-ratio: 10/9;
+    border-radius: 1rem;
+    /* box-shadow: 0 1rem 3rem rgb(0,0,0,0.3); */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+    /* opacity: 0.3; */
+
+
+
+    /* display: none; */
+}
+
+.time-input{
+    display: flex;
+    column-gap: 1rem;
+}
+
+.event-popup-time{
+    width: clamp(4rem, 4cqi, 7rem);
+    background-color: #464545;
+    color: white;
+    font-family: "Bebas neue", sans-serif;
+    font-size: clamp(1.5rem, 1.5cqi, 2.2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.1rem;
+}
+
+.time-input input{
+    background-color: transparent;
+    border:  none;
+    border-top: 0.1rem solid black;
+    border-bottom: 0.1rem solid white;
+    width: clamp(4rem, 4cqi, 7rem);
+    height: 4rem;
+    text-align: center;
+    color: white;
+}
+
+.time-input input[type="number"]::-webkit-outer-spin-button,
+.time-input input[type="number"]::-webkit-inner-spin-button{
+    appearance: none;
+}
+
+.event-popup textarea{
+    width: clamp(15rem,15cqi,25rem);
+    aspect-ratio: 5/2;
+    resize: none;
+    background-color: #4b4a4a;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: #9da6af;
+    transition: border 0.5s;
+}
+
+.event-popup textarea:focus{
+    border: 0.1rem solid #313131;
+}
+
+.event-popup textarea::placeholder{
+    font-size: clamp(1rem, 0.8cqi, 1.2rem);
+    color: #8d8484;
+}
+
+.event-popup textarea:focus::placeholder{
+    color: transparent;
+}
+
+.event-add-btn{
+    width: clamp(15rem, 15cqi, 25rem);
+    height: 4rem;
+    background-color: #464545;
+    color: #bbb;
+    font-family: "Bebas neue",sans-serif;
+    font-size: clamp(1.5rem,1.5cqi,2rem);
+    letter-spacing: 0.1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.event-add-btn:active{
+    transform: translateY(0.1rem);
+}
+
+.close-event{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #9da6af;
+}
+
+.close-event i{
+    font-size: 2.5rem;
+}
+
+
+.eventsContainer{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 12px; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #bbb; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #555454;
+    border-radius: 6px; 
+  }
+
+  .scrollable-element {
+    scrollbar-width: thin;
+    scrollbar-color: #555454 #bbb;
+  }
+  .event-category{
+    position: absolute;
+    bottom: 0rem;
+    right: 4rem;
+    color: #8d8484;
+    font-size: smaller;
+  }
+
+  .category-select select{
+    background-color: #bbb;
+    color: white;
+    font-size: smaller;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 5rem;
+    margin-left: 2rem;
+  }
+
+  .filter-buttons{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    column-gap: 1rem;
+  }
+
+
+
+
+  @media (max-width: 850px) {
+    .calender-app {
+      flex-direction: column;
+      row-gap: 2rem;
+      aspect-ratio: 3 / 2;
+    }
+  
+    .calender {
+      width: 70%;
+      margin: auto;
+    }
+  
+    .navigate-date {
+      margin: 1rem 0;
+    }
+  
+    .weekdays {
+      margin: 1rem 0;
+    }
+  
+    .events {
+      width: 80%;
+      margin: auto;
+    }
+  
+    .event-popup {
+      top: 18%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      aspect-ratio: 4 / 3;
+      row-gap: 1rem;
+    }
+  
+    .event-popup-time {
+      width: clamp(5rem, 10cqi, 8rem);
+      font-size: clamp(1.5rem, 3cqi, 2.2rem);
+    }
+  
+    .time-input input {
+      width: clamp(5rem, 10cqi, 8rem);
+      font-size: clamp(1.2rem, 2cqi, 1.6rem);
+    }
+  
+    .event-popup textarea {
+      width: clamp(18rem, 35cqi, 28rem);
+    }
+  
+    .event-popup textarea::placeholder {
+      font-size: clamp(1rem, 1.5cqi, 1.2rem);
+    }
+  
+    .event-popup-btn {
+      width: clamp(18rem, 35cqi, 28rem);
+      font-size: clamp(1.5rem, 3cqi, 2.2rem);
+    }
+  
+    .event-date {
+      font-size: clamp(1rem, 1.4cqi, 1.2rem);
+    }
+  
+    .event-time {
+      font-size: clamp(1rem, 2cqi, 1.6rem);
+    }
+  
+    .event-text {
+      font-size: clamp(1rem, 2.5cqi, 1.4rem);
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .calender-app {
+      aspect-ratio: 10 / 9;
+    }
+  
+    .calender {
+      width: 100%;
+    }
+  
+    .event-popup {
+      top: 23%;
+      width: 80%;
+    }
+  
+    .events {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .calender-app {
+      aspect-ratio: 3 / 2;
+    }
+  }
+  
